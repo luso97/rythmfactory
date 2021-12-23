@@ -1,4 +1,4 @@
-FROM 6.9.2-jdk11 AS build
+FROM gradle:6.9.2-jdk11 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle clean build --no-daemon
