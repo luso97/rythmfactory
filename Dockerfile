@@ -1,6 +1,6 @@
 FROM gradle:6.9.2-jdk11 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
-ADD build.gradle.kts settings.gradle.kts /home/gradle
+ADD build.gradle.kts settings.gradle.kts /home/gradle/
 COPY /src /home/gradle/src/
 WORKDIR /home/gradle/src
 RUN gradle clean build --no-daemon
