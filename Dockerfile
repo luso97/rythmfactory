@@ -4,6 +4,7 @@ ADD build.gradle.kts settings.gradle.kts /home/gradle/
 COPY /src /home/gradle/src/
 WORKDIR /home/gradle/src
 RUN gradle clean build --no-daemon
+RUN gradle test
 
 FROM openjdk:11
 COPY --from=build /home/gradle/src/build/libs/rythmfactory-0.0.1-SNAPSHOT.jar rythmfactory.jar

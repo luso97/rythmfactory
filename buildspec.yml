@@ -22,3 +22,8 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
+reports: #New
+  SurefireReports: # CodeBuild will create a report group called "SurefireReports".
+    files: #Store all of the files
+      - '**/*'
+    base-directory: '/home/gradle/src/build/reports' # Location of the reports
